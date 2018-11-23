@@ -1,0 +1,36 @@
+version: '2.1'
+services:
+
+    webapp:
+        build: ./services/webapp
+        networks:
+            - production
+        environment:
+            NODE_ENV: production
+            LOG_LEVEL: ${LOG_LEVEL-info}
+            SSR_PORT: ${SSR_PORT:-8080}
+            SSR_ENABLED: ${SSR_ENABLED-yes}
+            SSR_BUILD: ${SSR_BUILD:-/usr/src/app/build}
+            SSR_ROOT: ${SSR_ROOT:-/usr/src/app/src}
+            SSR_TIMEOUT: ${SSR_TIMEOUT:-5000}
+            SSR_DISABLE_JS: ${SSR_DISABLE_JS:-no}
+            SSR_USE_WEBPACK_JS: ${SSR_USE_WEBPACK_JS:-no}
+            SSR_BLACKLIST: ${SSR_BLACKLIST:-}
+        restart: always
+
+    proxy:
+        build: ./services/proxy
+        networks:
+            - production
+        ports:
+            - ${PROXY_PORT:-8080}:80
+        environment:
+            NGINX_UPSTREAM_SERVER: webapp
+            NGINX_UPSTREAM_PORT: 8080
+            NGINX_STATIC_FILES_ROOT: "/usr/src/app/build/"
+        volumes_from:
+            - webapp
+        restart: always
+
+networks:
+    production:
