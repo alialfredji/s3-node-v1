@@ -5,25 +5,21 @@ let client = null
 let config = null
 
 const init = (__config = {}) => {
-    // console.log('**** S3 INIT')
     config = __config
 }
 
 const start = () => {
-    // console.log('**** S3 START CLIENT')
     client = new AWS.S3({
         accessKeyId: config.AWS_ACCESS_KEY,
         secretAccessKey: config.AWS_SECRET_ACCESS_KEY,
-        region: config.REGION,
+        region: config.AWS_REGION,
     })
 }
 
 const upload = async (file, size = 'default') => {
-    // console.log('**** S3 Upload file:', file)
-
     const params = {
         Body: file.buffer,
-        Bucket: config.BUCKET_NAME,
+        Bucket: config.AWS_S3_BUCKET_NAME,
         ContentType: file.contentType,
         Key: `${size}/${file.key}`,
     }
@@ -32,8 +28,6 @@ const upload = async (file, size = 'default') => {
 }
 
 const downloadFile = (key, size = 'default') => new Promise((resolve, reject) => {
-    // console.log('**** S3 Download file:', key)
-
     const params = {
         Bucket: config.BUCKET_NAME,
         Key: `${size}/${key}`,

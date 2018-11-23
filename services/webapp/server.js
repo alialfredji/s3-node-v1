@@ -72,10 +72,10 @@ const boot = async () => {
         })
 
         await s3.init({
-            AWS_ACCESS_KEY: 'AKIAISNFEWDCIFQMKDDA',
-            AWS_SECRET_ACCESS_KEY: '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',
-            REGION: 'eu-west-1',
-            BUCKET_NAME: 'ali-test-s3',
+            AWS_ACCESS_KEY: getConfig('AWS_ACCESS_KEY'),
+            AWS_SECRET_ACCESS_KEY: getConfig('AWS_SECRET_ACCESS_KEY'),
+            REGION: getConfig('AWS_REGION'),
+            BUCKET_NAME: getConfig('AWS_S3_BUCKET_NAME'),
         })
 
         await s3.start()
