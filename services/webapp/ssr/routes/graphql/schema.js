@@ -5,8 +5,6 @@ const {
     GraphQLString,
 } = require('graphql')
 
-const s3Upload = require('./s3-upload.mutation')
-
 const RootQueryType = new GraphQLObjectType({
     name: 'RootQuery',
     fields: {
@@ -14,17 +12,15 @@ const RootQueryType = new GraphQLObjectType({
             type: GraphQLString,
         },
     },
-    // fields: () => ({}),
 })
 
 const RootMutationType = new GraphQLObjectType({
     name: 'RootMutation',
-    fields: () => ({
+    fields: {
         hello: {
             type: GraphQLString,
         },
-        s3Upload,
-    }),
+    },
 })
 
 const schema = new GraphQLSchema({

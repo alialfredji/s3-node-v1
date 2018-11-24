@@ -74,8 +74,8 @@ const boot = async () => {
         await s3.init({
             AWS_ACCESS_KEY: getConfig('AWS_ACCESS_KEY'),
             AWS_SECRET_ACCESS_KEY: getConfig('AWS_SECRET_ACCESS_KEY'),
-            REGION: getConfig('AWS_REGION'),
-            BUCKET_NAME: getConfig('AWS_S3_BUCKET_NAME'),
+            AWS_REGION: getConfig('AWS_REGION'),
+            AWS_S3_BUCKET_NAME: getConfig('AWS_S3_BUCKET_NAME'),
         })
 
         await s3.start()

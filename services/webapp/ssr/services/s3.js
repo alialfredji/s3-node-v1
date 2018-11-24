@@ -29,7 +29,7 @@ const upload = async (file, size = 'default') => {
 
 const downloadFile = (key, size = 'default') => new Promise((resolve, reject) => {
     const params = {
-        Bucket: config.BUCKET_NAME,
+        Bucket: config.AWS_S3_BUCKET_NAME,
         Key: `${size}/${key}`,
     }
 
