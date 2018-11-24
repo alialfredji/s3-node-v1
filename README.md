@@ -57,4 +57,4 @@ Allowed sizes: `small, medium, big`. If you download the project you can configu
 
 You basically need to understand how Cloudfront works. Here you you have a tutorial: https://www.youtube.com/watch?v=KIltfPRpTi4
 
-Be sure to configure the Cloudfront distribution to target the server, in other words you need to specify a `costum-origin` for you distribution. Else you need to specify a Read policy to your S3 bucket.
+Be sure to configure the Cloudfront distribution to target the server, in other words you need to specify a `costum-origin` for you distribution. Else if you target your S3 bucket you need to specify a Read policy.
