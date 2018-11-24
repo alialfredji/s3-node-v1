@@ -43,7 +43,7 @@ const s3 = require('./ssr/services/s3')
 
 // Env Defaults
 const defaultEnv = {
-    ssrEnabled: 'yes',
+    ssrEnabled: 'no',
     ssrTimeout: 5000,
     ssrRoot: path.join(__dirname, 'src'),
     ssrBuild: path.join(__dirname, 'build'),

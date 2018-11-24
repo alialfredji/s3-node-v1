@@ -4,21 +4,19 @@ This is a template project for uploading and downloading images from an S3 bucke
 
 ## Package.json and running project
 
-Package.json contains all the scripts you can run. Below you find a couple of them. You can also run the project using docker.
+Package.json contains all the scripts you can run. Below you find a couple of them.
 
-## Running project in development using Node
+## Running project in development
 
-1. `cd services/webapp`
-2. `yarn start:dev:api` to run server
-3. `yarn start` to run client
+`yarn start:dev:api` to run server
+`yarn start` to run client
 
 Client will be served on `port 3000`
 Server will be served on `port 8080`
 
-## Running project in production using Node
+## Running project in production
 
-1. `cd services/webapp`
-2. `yarn start:prod` to run client and server
+`yarn start:prod` to run client and server
 
 Project will be served on `port 8080`
 
