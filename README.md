@@ -24,10 +24,10 @@ Client will be served on `port 3000`. Server will be served on `port 8080`.
 
 ## Required enviroment variables
 
-`AWS_ACCESS_KEY`
-`AWS_SECRET_ACCESS_KEY`
-`AWS_REGION`
-`AWS_S3_BUCKET_NAME`
+- `AWS_ACCESS_KEY`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_REGION`
+- `AWS_S3_BUCKET_NAME`
 
 Create a `.env.local` file and specify your credentials their. When the server boot it will pick up the variables and pass them down to your `AWS S3 Client`
 
