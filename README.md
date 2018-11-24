@@ -8,17 +8,12 @@ Package.json contains all the scripts you can run. Below you find a couple of th
 
 ## Running project in development
 
-`yarn start:dev:api` to run server
-`yarn start` to run client
-
-Client will be served on `port 3000`
-Server will be served on `port 8080`
+`yarn start:dev:api` to run server. `yarn start` to run client.
+Client will be served on `port 3000`. Server will be served on `port 8080`.
 
 ## Running project in production
 
-`yarn start:prod` to run client and server
-
-Project will be served on `port 8080`
+`yarn start:prod` to run client and server. Project will be served on `port 8080`.
 
 ## Needed Node modules
 
