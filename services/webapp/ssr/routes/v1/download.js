@@ -38,6 +38,7 @@ const createDownloadRouter = () => {
                             case 'small': return 50
                             case 'medium': return 100
                             case 'big': return 150
+                            default: return 150
                         }
                     }
 
