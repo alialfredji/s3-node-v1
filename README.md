@@ -20,6 +20,7 @@ Client will be served on `port 3000`. Server will be served on `port 8080`.
 - `aws-sdk` amazons own node client sdk
 - `file-type` get file type ex. jpg, pdf
 - `multiparty` - extrac files from `content-type: form-data`
+- `sharp` - resize images
 
 ## Required enviroment variables
 
@@ -28,7 +29,7 @@ Client will be served on `port 3000`. Server will be served on `port 8080`.
 `AWS_REGION`
 `AWS_S3_BUCKET_NAME`
 
-Create a `.env.local` and specify your credentials their. When the server boot it will pick up the variables and pass them down to your `AWS S3 Client`
+Create a `.env.local` file and specify your credentials their. When the server boot it will pick up the variables and pass them down to your `AWS S3 Client`
 
 ## Create an S3 bucket
 
@@ -36,7 +37,7 @@ In order to be able to upload/download images you need to have a S3 bucket ready
 
 ## Upload an image 
 
-From the client you can choose an image from your device or computer and upload it. The image downloaded after uploading. You will also be informed about the `fileKeyName` for future download.
+From the client you can choose an image from your device or computer and upload it. The image gets downloaded after uploading. You will also be informed about the `fileKeyName` for future download.
 
 ## Download an image
 
